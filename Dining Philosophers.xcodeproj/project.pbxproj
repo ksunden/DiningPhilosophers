@@ -21,6 +21,7 @@
 		27D451A218BD7BE200996FD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D4518418BD7BE200996FD8 /* UIKit.framework */; };
 		27D451AA18BD7BE200996FD8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27D451A818BD7BE200996FD8 /* InfoPlist.strings */; };
 		27D451AC18BD7BE200996FD8 /* Dining_PhilosophersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D451AB18BD7BE200996FD8 /* Dining_PhilosophersTests.m */; };
+		27D451B718BD7C8600996FD8 /* KPWPhilosopher.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D451B618BD7C8600996FD8 /* KPWPhilosopher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		27D451A718BD7BE200996FD8 /* Dining PhilosophersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dining PhilosophersTests-Info.plist"; sourceTree = "<group>"; };
 		27D451A918BD7BE200996FD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27D451AB18BD7BE200996FD8 /* Dining_PhilosophersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dining_PhilosophersTests.m; sourceTree = "<group>"; };
+		27D451B518BD7C8600996FD8 /* KPWPhilosopher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPWPhilosopher.h; sourceTree = "<group>"; };
+		27D451B618BD7C8600996FD8 /* KPWPhilosopher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPWPhilosopher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				27D4518F18BD7BE200996FD8 /* KPWAppDelegate.h */,
 				27D4519018BD7BE200996FD8 /* KPWAppDelegate.m */,
 				27D4519218BD7BE200996FD8 /* Main.storyboard */,
+				27D451B518BD7C8600996FD8 /* KPWPhilosopher.h */,
+				27D451B618BD7C8600996FD8 /* KPWPhilosopher.m */,
 				27D4519518BD7BE200996FD8 /* KPWViewController.h */,
 				27D4519618BD7BE200996FD8 /* KPWViewController.m */,
 				27D4519818BD7BE200996FD8 /* Images.xcassets */,
@@ -252,6 +257,7 @@
 			files = (
 				27D4518D18BD7BE200996FD8 /* main.m in Sources */,
 				27D4519718BD7BE200996FD8 /* KPWViewController.m in Sources */,
+				27D451B718BD7C8600996FD8 /* KPWPhilosopher.m in Sources */,
 				27D4519118BD7BE200996FD8 /* KPWAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
