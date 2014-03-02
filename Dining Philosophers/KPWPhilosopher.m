@@ -21,17 +21,18 @@
 
 
 
--(void) setUpWithLeft:(KPWPhilosopher *)left right:(KPWPhilosopher *)right number:(NSInteger)philNum
+-(void) setUpWithLeft:(KPWPhilosopher *)left right:(KPWPhilosopher *)right number:(NSInteger)philNum log:(KPWLog *) log
 {
+    [self setLog:log];
     [self setLeft:left];
     [self setRight:right];
     [self setPhilosopherNumber:philNum];
-    _thinkingTime = 0;
+    _thinkingTime = -1;
     _hungryTime = 0;
     _eatingTime = 0;
     _hasLeftChopstick = FALSE;
     _hasRightChopstick = FALSE;
-    [self setState:THINKING];
+    [self setPhilosopherState:THINKING];
 }
 -(BOOL) pickUpLeftChopstick
 {
@@ -53,45 +54,47 @@
 
 -(void) requestFood:(NSInteger)amount
 {
-    [self setState:HUNGRY];
+    [_log updateLog:[NSString stringWithFormat:@"%d: Philosopher %ld: %@", (_thinkingTime+_eatingTime+_hungryTime), (long)_philosopherNumber, @"Hungry"]];
+    [self setPhilosopherState:HUNGRY];
     [self setHowHungry:amount];
+    [self setTitle: [NSString stringWithFormat:@"Hungry: %d", _howHungry] forState:UIControlStateNormal];
+    [self setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
+
 }
 
 -(void) step
 {
-    switch ([self state]) {
-        
-        case HUNGRY:
+    if (_philosopherState == HUNGRY)
+    {
             if (_philosopherNumber % 2 == 1)
             {
                 if([self pickUpLeftChopstick] && [self pickUpRightChopstick])
                 {
-                    [self setState:EATING];
+                    [self setPhilosopherState:EATING];
+                    [_log updateLog:[NSString stringWithFormat:@"%d: Philosopher %ld: %@", (_thinkingTime+_eatingTime+_hungryTime), (long)_philosopherNumber, @"Eating"]];
                 }
             }else{
                 if([self pickUpRightChopstick] && [self pickUpLeftChopstick])
                 {
-                    [self setState:EATING];
+                    [self setPhilosopherState:EATING];
+                    [_log updateLog:[NSString stringWithFormat:@"%d: Philosopher %ld: %@", (_thinkingTime+_eatingTime+_hungryTime), (long)_philosopherNumber, @"Eating"]];
                 }
             }
-            break;
+    }
 
-        case EATING:
+     if (_philosopherState == EATING)
+     {
             _howHungry--;
             if (_howHungry == 0) {
                 _eatingTime++;
                 _thinkingTime--; // Will add back in later switch;
-                [self setState:THINKING];
+                [self setPhilosopherState:THINKING];
+                [_log updateLog:[NSString stringWithFormat:@"%d: Philosopher %ld: %@", (_thinkingTime+_eatingTime+_hungryTime+1), (long)_philosopherNumber, @"Thinking"]];
                 //TODO log changes
             }
-            break;
-        case THINKING:
-            break;
-                default:
-            break;
-    }
+     }
     
-    switch ([self state]) {
+    switch (_philosopherState) {
             
         case HUNGRY:
             [self setTitle: [NSString stringWithFormat:@"Hungry: %d", _howHungry] forState:UIControlStateNormal];
@@ -118,7 +121,7 @@
 
 -(void) releaseChopsticks
 {
-    if([self state] == THINKING)
+    if(_philosopherState == THINKING)
     {
         [self setHasLeftChopstick:FALSE];
         [self setHasRightChopstick:FALSE];

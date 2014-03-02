@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2790F4C818C3AAA300BD4CB6 /* KPWLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2790F4C718C3AAA300BD4CB6 /* KPWLog.m */; };
 		27D4518118BD7BE200996FD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D4518018BD7BE200996FD8 /* Foundation.framework */; };
 		27D4518318BD7BE200996FD8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D4518218BD7BE200996FD8 /* CoreGraphics.framework */; };
 		27D4518518BD7BE200996FD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D4518418BD7BE200996FD8 /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2790F4C618C3AAA300BD4CB6 /* KPWLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPWLog.h; sourceTree = "<group>"; };
+		2790F4C718C3AAA300BD4CB6 /* KPWLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPWLog.m; sourceTree = "<group>"; };
 		27D4517D18BD7BE200996FD8 /* Dining Philosophers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dining Philosophers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D4518018BD7BE200996FD8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27D4518218BD7BE200996FD8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +121,8 @@
 				27D4518F18BD7BE200996FD8 /* KPWAppDelegate.h */,
 				27D4519018BD7BE200996FD8 /* KPWAppDelegate.m */,
 				27D4519218BD7BE200996FD8 /* Main.storyboard */,
+				2790F4C618C3AAA300BD4CB6 /* KPWLog.h */,
+				2790F4C718C3AAA300BD4CB6 /* KPWLog.m */,
 				27D451B518BD7C8600996FD8 /* KPWPhilosopher.h */,
 				27D451B618BD7C8600996FD8 /* KPWPhilosopher.m */,
 				27D4519518BD7BE200996FD8 /* KPWViewController.h */,
@@ -256,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27D4518D18BD7BE200996FD8 /* main.m in Sources */,
+				2790F4C818C3AAA300BD4CB6 /* KPWLog.m in Sources */,
 				27D4519718BD7BE200996FD8 /* KPWViewController.m in Sources */,
 				27D451B718BD7C8600996FD8 /* KPWPhilosopher.m in Sources */,
 				27D4519118BD7BE200996FD8 /* KPWAppDelegate.m in Sources */,
@@ -467,6 +473,7 @@
 				27D451B118BD7BE200996FD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27D451B218BD7BE200996FD8 /* Build configuration list for PBXNativeTarget "Dining PhilosophersTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +482,7 @@
 				27D451B418BD7BE200996FD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

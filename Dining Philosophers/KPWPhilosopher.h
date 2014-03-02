@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KPWLog.h"
 
-typedef enum{
-    THINKING,
-    EATING,
-    HUNGRY
+typedef enum {
+    THINKING = 0,
+    EATING = 1,
+    HUNGRY = 2 
     }State;
 
 @interface KPWPhilosopher : UIButton
@@ -24,13 +25,14 @@ typedef enum{
 @property (nonatomic) NSInteger eatingTime;
 
 @property (nonatomic) NSInteger philosopherNumber;
+@property (nonatomic, strong) KPWLog *log;
 
 @property BOOL hasLeftChopstick;
 @property BOOL hasRightChopstick;
 
-@property (nonatomic) State state;
+@property State philosopherState;
 
--(void) setUpWithLeft:(KPWPhilosopher *) left right: (KPWPhilosopher *) right number:(NSInteger) philNum;
+-(void) setUpWithLeft:(KPWPhilosopher *) left right: (KPWPhilosopher *) right number:(NSInteger) philNum log: (KPWLog *)log;
 
 -(void) requestFood: (NSInteger) amount;
 -(void) step;
