@@ -6,22 +6,25 @@ Consider five philosophers who spend their lives thinking and eating. The philos
 
 Here is our solution to the problem:
 
-When multiple philosophers want to dine at the same time, the odded numbered philosophers will have the priority to occupy available chopsticks around her, thus avoiding deadlock. However, starvation may occur to an even nuwhen both neighbors of an even numbered philosopher keeps eating.
+We implement the asymmetric solution, where Odd philosophers pick up left then right chopsicks, and even philosophers pick up right then left chopsticks.  This avoids starvation and deadlock, but may not optimize chopstick utilization.
 
 
 Usage of this app:
 
 This app evaluates the time spent eating by using discrete time stamps. In the add, you can modify the duration, i.e., the number of time stamps, of any philosopher's eating time.
 
-On top of the app, the current time stamp is show in the center. Then in the upper part, you should be able to see the state (Hungry, Eating, Thinking) of each philosopher with the time needed for her to finish eating.
+On top of the app, the current time stamp is shown in the center. Then in the upper part, you should be able to see the state (Hungry, Eating, Thinking) of each philosopher with the time needed for her to finish eating.
 
 The slider is for adjusting the length of eating time. The value of the time will be seen in the box below the slider.
 
-The "Start" button will run two time stamps in one second. After pressing "Start", the button will change to "Pause", enabling the user to pause the process.
+The "Run" button will run two time stamps in one second. After pressing "Run", the button will change to "Pause", enabling the user to pause the process.
 
-The "step" button will proceed the process to the next time stamp.
+The "Step" button will proceed the process to the next time stamp.
 
-The "stop" button will restore the values and output the activity summary of every philosopher.
+The "Stop" button will stop the simulation output the activity summary of every philosopher.
+The button will change to "Start" and allow the simulation to resume.
+
+To restart from the beginning, quit and restart the app.
 
 Enjoy!
 
