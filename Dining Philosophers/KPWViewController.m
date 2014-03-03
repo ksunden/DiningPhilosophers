@@ -99,11 +99,11 @@
     
     if(![_runButton isEnabled])
     {
-    [_log updateLog:[NSString stringWithFormat:@"Philosopher 1\nThinking: %d Hungry: %d Eating: %d", [_phil1 thinkingTime], [_phil1 hungryTime], [_phil1 eatingTime]]];
-    [_log updateLog:[NSString stringWithFormat:@"Philosopher 2\nThinking: %d Hungry: %d Eating: %d", [_phil2 thinkingTime], [_phil2 hungryTime], [_phil2 eatingTime]]];
-    [_log updateLog:[NSString stringWithFormat:@"Philosopher 3\nThinking: %d Hungry: %d Eating: %d", [_phil3 thinkingTime], [_phil3 hungryTime], [_phil3 eatingTime]]];
-    [_log updateLog:[NSString stringWithFormat:@"Philosopher 4\nThinking: %d Hungry: %d Eating: %d", [_phil4 thinkingTime], [_phil4 hungryTime], [_phil4 eatingTime]]];
-    [_log updateLog:[NSString stringWithFormat:@"Philosopher 5\nThinking: %d Hungry: %d Eating: %d", [_phil5 thinkingTime], [_phil5 hungryTime], [_phil5 eatingTime]]];
+        [_log updateLog:[NSString stringWithFormat:@"Philosopher 1\nThinking: %d Hungry: %d Eating: %d", [_phil1 thinkingTime], [_phil1 hungryTime], [_phil1 eatingTime]]];
+        [_log updateLog:[NSString stringWithFormat:@"Philosopher 2\nThinking: %d Hungry: %d Eating: %d", [_phil2 thinkingTime], [_phil2 hungryTime], [_phil2 eatingTime]]];
+        [_log updateLog:[NSString stringWithFormat:@"Philosopher 3\nThinking: %d Hungry: %d Eating: %d", [_phil3 thinkingTime], [_phil3 hungryTime], [_phil3 eatingTime]]];
+        [_log updateLog:[NSString stringWithFormat:@"Philosopher 4\nThinking: %d Hungry: %d Eating: %d", [_phil4 thinkingTime], [_phil4 hungryTime], [_phil4 eatingTime]]];
+        [_log updateLog:[NSString stringWithFormat:@"Philosopher 5\nThinking: %d Hungry: %d Eating: %d", [_phil5 thinkingTime], [_phil5 hungryTime], [_phil5 eatingTime]]];
         [sender setTitle:@"Start" forState:UIControlStateNormal];
     }else
     {
