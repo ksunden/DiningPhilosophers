@@ -13,13 +13,15 @@
  */
 
 #import <Foundation/Foundation.h>
+
+// Delegate protocol to notify when the log has been updated
 @protocol KPWLogDelegate
 
 -(void) logUpdated;
 
 @end
 
-
+// Define properties and methods of the log
 @interface KPWLog : NSObject
 
 @property (nonatomic, strong) NSMutableString *logString;

@@ -16,6 +16,7 @@
 
 @implementation KPWLog
 
+// Initialize and assign a delegate.
 -(id) initWithDelegate: (id<KPWLogDelegate>) del
 {
     self = [self init];
@@ -24,6 +25,7 @@
     return self;
 }
 
+// Add a string to the log and call the delegate's updated method
 -(void)updateLog:(NSString *)stg
 {
     [_logString appendFormat:@"%@\n",stg];

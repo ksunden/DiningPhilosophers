@@ -24,7 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    // Initialize and set up UI elements
     _log = [[KPWLog alloc]initWithDelegate:self];
     [_phil1 setUpWithLeft:_phil2 right:_phil5 number:1 log:_log];
     [_phil2 setUpWithLeft:_phil3 right:_phil1 number:2 log:_log];
@@ -37,14 +37,17 @@
     [_sliderVal setText:@"5"];
     
     [_runButton setTitle:@"Run" forState:UIControlStateNormal];
+    
+    // Schedule runStep to be called every half second
     [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(runStep) userInfo:Nil repeats:YES];
     [self step];
     _timeStep = 0;
     [_timeStepLabel setText: [NSString stringWithFormat:@"%ld", (long)_timeStep]];
     [_log updateLog:@"Simulation started"];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
+// Increment timestep, step each philosopher, release chopsticks that are finished eating
+// Called from other methods and when stepButton is tapped
 -(IBAction) step
 {
     _timeStep++;
@@ -61,6 +64,7 @@
     [_phil5 releaseChopsticks];
 }
 
+// Run a step if the simulation is running
 -(void) runStep
 {
     if(_isRunning)
@@ -69,6 +73,7 @@
     }
 }
 
+// Run or pause the simulation
 - (IBAction)run:(id)sender {
     _isRunning = !_isRunning;
     if(_isRunning)
@@ -79,10 +84,13 @@
     }
 }
 
+// Update slider indicator
 - (IBAction)sliderChanged:(UISlider *)sender {
     [_sliderVal setText:[NSString stringWithFormat:@"%ld", (long)[sender value]]];
 }
 
+// Stop simulation, print stats on philosophers
+// Starts simulation if stopped
 - (IBAction)stoptapped:(UIButton *)sender {
     _isRunning = FALSE;
     [_runButton setTitle:@"Run" forState:UIControlStateNormal];
@@ -109,7 +117,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+// Request food for a philosopher
 - (IBAction)philsospherPoked:(KPWPhilosopher *)sender {
     if([sender philosopherState]==THINKING)
     {
@@ -117,6 +125,7 @@
     }
 }
 
+// Update the log text view
 -(void)logUpdated
 {
     [_logView setText:[_log logString]];
