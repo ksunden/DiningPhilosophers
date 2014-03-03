@@ -23,6 +23,7 @@
 		27D451AA18BD7BE200996FD8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27D451A818BD7BE200996FD8 /* InfoPlist.strings */; };
 		27D451AC18BD7BE200996FD8 /* Dining_PhilosophersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D451AB18BD7BE200996FD8 /* Dining_PhilosophersTests.m */; };
 		27D451B718BD7C8600996FD8 /* KPWPhilosopher.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D451B618BD7C8600996FD8 /* KPWPhilosopher.m */; };
+		E7CEBCAA18C458D80053DAB6 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7CEBCA918C458D80053DAB6 /* README.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		27D451AB18BD7BE200996FD8 /* Dining_PhilosophersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dining_PhilosophersTests.m; sourceTree = "<group>"; };
 		27D451B518BD7C8600996FD8 /* KPWPhilosopher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPWPhilosopher.h; sourceTree = "<group>"; };
 		27D451B618BD7C8600996FD8 /* KPWPhilosopher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPWPhilosopher.m; sourceTree = "<group>"; };
+		E7CEBCA918C458D80053DAB6 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				27D4519618BD7BE200996FD8 /* KPWViewController.m */,
 				27D4519818BD7BE200996FD8 /* Images.xcassets */,
 				27D4518718BD7BE200996FD8 /* Supporting Files */,
+				E7CEBCA918C458D80053DAB6 /* README.txt */,
 			);
 			path = "Dining Philosophers";
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				27D4519918BD7BE200996FD8 /* Images.xcassets in Resources */,
 				27D4518B18BD7BE200996FD8 /* InfoPlist.strings in Resources */,
+				E7CEBCAA18C458D80053DAB6 /* README.txt in Resources */,
 				27D4519418BD7BE200996FD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

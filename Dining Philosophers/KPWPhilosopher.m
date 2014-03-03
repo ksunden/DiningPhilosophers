@@ -3,8 +3,16 @@
 //  Dining Philosophers
 //
 //  Created by Kyle Sunden on 2/25/14.
+//  Collaborators: Will Reichle, Fayang Pan
+//  For Dining Philosophers Project, for Operating Systems class, Winter 2014, Kalamazoo College.
 //  Copyright (c) 2014 KyleSunden. All rights reserved.
 //
+
+/**
+ 
+ This class defines a philosopher and its actions. We used doubly linked list to connect a philosoper and his/her neighbors.
+ 
+ */
 
 #import "KPWPhilosopher.h"
 @interface KPWPhilosopher()
@@ -17,9 +25,6 @@
 @end
 
 @implementation KPWPhilosopher
-
-
-
 
 -(void) setUpWithLeft:(KPWPhilosopher *)left right:(KPWPhilosopher *)right number:(NSInteger)philNum log:(KPWLog *) log
 {
@@ -59,40 +64,42 @@
     [self setHowHungry:amount];
     [self setTitle: [NSString stringWithFormat:@"Hungry: %d", _howHungry] forState:UIControlStateNormal];
     [self setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
-
+    
 }
 
+// Main method as each timestamp passes.
 -(void) step
 {
     if (_philosopherState == HUNGRY)
     {
-            if (_philosopherNumber % 2 == 1)
+        // Odd numbered philosophers have the priority to eat.
+        if (_philosopherNumber % 2 == 1)
+        {
+            if([self pickUpLeftChopstick] && [self pickUpRightChopstick])
             {
-                if([self pickUpLeftChopstick] && [self pickUpRightChopstick])
-                {
-                    [self setPhilosopherState:EATING];
-                    [_log updateLog:[NSString stringWithFormat:@"%d: Philosopher %ld: %@", (_thinkingTime+_eatingTime+_hungryTime), (long)_philosopherNumber, @"Eating"]];
-                }
-            }else{
-                if([self pickUpRightChopstick] && [self pickUpLeftChopstick])
-                {
-                    [self setPhilosopherState:EATING];
-                    [_log updateLog:[NSString stringWithFormat:@"%d: Philosopher %ld: %@", (_thinkingTime+_eatingTime+_hungryTime), (long)_philosopherNumber, @"Eating"]];
-                }
+                [self setPhilosopherState:EATING];
+                [_log updateLog:[NSString stringWithFormat:@"%d: Philosopher %ld: %@", (_thinkingTime+_eatingTime+_hungryTime), (long)_philosopherNumber, @"Eating"]];
             }
+        }else{
+            if([self pickUpRightChopstick] && [self pickUpLeftChopstick])
+            {
+                [self setPhilosopherState:EATING];
+                [_log updateLog:[NSString stringWithFormat:@"%d: Philosopher %ld: %@", (_thinkingTime+_eatingTime+_hungryTime), (long)_philosopherNumber, @"Eating"]];
+            }
+        }
     }
-
-     if (_philosopherState == EATING)
-     {
-            _howHungry--;
-            if (_howHungry == 0) {
-                _eatingTime++;
-                _thinkingTime--; // Will add back in later switch;
-                [self setPhilosopherState:THINKING];
-                [_log updateLog:[NSString stringWithFormat:@"%d: Philosopher %ld: %@", (_thinkingTime+_eatingTime+_hungryTime+1), (long)_philosopherNumber, @"Thinking"]];
-                //TODO log changes
-            }
-     }
+    
+    if (_philosopherState == EATING)
+    {
+        _howHungry--;
+        if (_howHungry == 0) {
+            _eatingTime++;
+            _thinkingTime--; // Will add back in later switch;
+            [self setPhilosopherState:THINKING];
+            [_log updateLog:[NSString stringWithFormat:@"%d: Philosopher %ld: %@", (_thinkingTime+_eatingTime+_hungryTime+1), (long)_philosopherNumber, @"Thinking"]];
+            //TODO log changes
+        }
+    }
     
     switch (_philosopherState) {
             
@@ -116,7 +123,7 @@
             _thinkingTime++;
             break;
     }
-
+    
 }
 
 -(void) releaseChopsticks
